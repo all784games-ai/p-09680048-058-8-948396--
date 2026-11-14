@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173d32">
+    <script src="auth.js"></script>
+    <title>Admin dashboard | Our Palestine</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+    <header class="admin-header">
+        <a class="admin-brand" href="my-palistain.html">Our Palestine <span>Admin</span></a>
+        <div class="admin-header-actions">
+            <a class="public-site-link" href="my-palistain.html">View website</a>
+            <button id="admin-sign-out" class="button button-outline" type="button">Sign out</button>
+        </div>
+    </header>
+    <main class="admin-main">
+        <section class="admin-welcome">
+            <div>
+                <p class="admin-eyebrow">Site management</p>
+                <h1>Dashboard</h1>
+                <p>Manage members, review community submissions, and publish website updates.</p>
+            </div>
+            <p class="demo-warning"><strong>Demo mode:</strong> changes are stored only in this browser. The admin/admin login is not secure for a live website.</p>
+        </section>
+
+        <nav class="admin-tabs" aria-label="Dashboard sections">
+            <button class="admin-tab is-active" type="button" data-panel="overview">Overview</button>
+            <button class="admin-tab" type="button" data-panel="site-editor">Site text & settings</button>
+            <button class="admin-tab" type="button" data-panel="review">Review changes</button>
+            <button class="admin-tab" type="button" data-panel="members">Members</button>
+            <button class="admin-tab" type="button" data-panel="news-games">News & games</button>
+            <button class="admin-tab" type="button" data-panel="release-notes">Version & updates</button>
+            <button class="admin-tab" type="button" data-panel="feedback">Feedback</button>
+        </nav>
+
+        <p id="admin-message" class="admin-message" role="status" aria-live="polite"></p>
+
+        <section id="panel-overview" class="admin-panel">
+            <h2>Overview</h2>
+            <div class="stats-grid">
+                <article class="stat-card"><span>Members</span><strong id="member-count">0</strong></article>
+                <article class="stat-card"><span>Pending review</span><strong id="pending-count">0</strong></article>
+                <article class="stat-card"><span>Published news</span><strong id="news-count">0</strong></article>
+                <article class="stat-card"><span>Published games</span><strong id="game-count">0</strong></article>
+            </div>
+            <p class="panel-note">Updates made here are reflected on the public pages in this browser.</p>
+        </section>
+
+        <section id="panel-site-editor" class="admin-panel" hidden>
+            <h2>Site text & settings</h2>
+            <p class="panel-note">Edit public English and Arabic text. A saved replacement is shown in either language.</p>
+            <form id="site-text-form" class="admin-form editor-grid">
+                <label>Brand name<input name="brand" maxlength="60" required></label>
+                <label>Home headline<input name="hero.title" maxlength="140" required></label>
+                <label class="wide-field">Home introduction<textarea name="hero.text" maxlength="500" rows="3" required></textarea></label>
+                <label>About heading<input name="about.title" maxlength="100" required></label>
+                <label class="wide-field">About text<textarea name="about.text" maxlength="500" rows="3" required></textarea></label>
+                <label>Services heading<input name="services.title" maxlength="100" required></label>
+                <label>Contact heading<input name="contact.title" maxlength="100" required></label>
+                <div class="wide-field form-actions">
+                    <button class="button" type="submit">Save text changes</button>
+                    <button id="reset-site-text" class="button button-outline" type="button">Restore default text</button>
+                </div>
+            </form>
+
+            <div class="settings-block">
+                <h3>Navigation settings</h3>
+                <p>Choose which main navigation links are visible on public pages.</p>
+                <form id="navigation-settings-form" class="navigation-options">
+                    <label><input type="checkbox" name="page" value="map.html"> Map</label>
+                    <label><input type="checkbox" name="page" value="market.html"> Market</label>
+                    <label><input type="checkbox" name="page" value="services.html"> Services</label>
+                    <label><input type="checkbox" name="page" value="chat.html"> Chat</label>
+                    <label><input type="checkbox" name="page" value="work.html"> Work</label>
+                    <button class="button" type="submit">Save navigation</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="panel-review" class="admin-panel" hidden>
+            <h2>Review changes</h2>
+            <p class="panel-note">Approve text suggestions, news, and game ideas before publishing, or reject them.</p>
+            <div id="review-list" class="record-list"></div>
+        </section>
+
+        <section id="panel-members" class="admin-panel" hidden>
+            <h2>Members</h2>
+            <p class="panel-note">Blocked members cannot sign in or continue using an existing session. Guest access is not an account.</p>
+            <div id="member-list" class="record-list"></div>
+        </section>
+
+        <section id="panel-news-games" class="admin-panel" hidden>
+            <h2>News & games</h2>
+            <div class="publish-grid">
+                <form id="news-form" class="admin-form">
+                    <h3>Publish news</h3>
+                    <label>Headline<input name="title" maxlength="100" required></label>
+                    <label>News text<textarea name="text" maxlength="600" rows="4" required></textarea></label>
+                    <button class="button" type="submit">Publish news</button>
+                </form>
+                <form id="game-form" class="admin-form">
+                    <h3>Add a game</h3>
+                    <label>Game title<input name="title" maxlength="80" required></label>
+                    <label>Description<textarea name="description" maxlength="300" rows="3" required></textarea></label>
+                    <label>Game page
+                        <select name="href">
+                            <option value="quiz.html">Culture quiz</option>
+                            <option value="platformer.html">Olive Grove Dash</option>
+                            <option value="game.html">Games page</option>
+                        </select>
+                    </label>
+                    <button class="button" type="submit">Add game</button>
+                </form>
+            </div>
+            <h3>Published news</h3>
+            <div id="published-news" class="record-list"></div>
+            <h3>Published games</h3>
+            <div id="published-games" class="record-list"></div>
+        </section>
+
+        <section id="panel-feedback" class="admin-panel" hidden>
+            <h2>Feedback</h2>
+            <p class="panel-note">Read feedback from members and archive it when handled.</p>
+            <div id="feedback-list" class="record-list"></div>
+        </section>
+
+        <section id="panel-release-notes" class="admin-panel" hidden>
+            <h2>Version & updates</h2>
+            <p class="panel-note">Publish a version and a short summary. New entries appear at the top of the update card on the homepage.</p>
+            <form id="release-note-form" class="admin-form release-note-form">
+                <label>Version number<input name="version" maxlength="24" placeholder="0.4.0" required></label>
+                <label>Update title<input name="title" maxlength="100" required></label>
+                <label>What changed?<textarea name="text" maxlength="700" rows="4" required></textarea></label>
+                <button class="button" type="submit">Publish update</button>
+            </form>
+            <h3>Published updates</h3>
+            <div id="release-note-list" class="record-list"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="auth.js"></script>
+    <title data-i18n="page.chat.title">Community chat | our Palestine</title>
+    <link rel="stylesheet" href="chat.css">
+    <script src="chat.js" defer></script>
+</head>
+<body class="page-chat">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+            <a class="brand" href="my-palistain.html" aria-label="My Palestine home" data-i18n-aria-label="brand.home">
+                <svg class="palestine-flag" viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                <span data-i18n="brand">My Palestine</span>
+            </a>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <ul id="menu" class="menu">
+                <li><a class="nav-link" href="my-palistain.html"><span data-i18n="nav.home">Home</span></a></li>
+                <li><a class="nav-link" href="map.html"><span data-i18n="nav.map">Map</span></a></li>
+                <li><a class="nav-link" href="market.html"><span data-i18n="nav.market">Market</span></a></li>
+                <li><a class="nav-link" href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">العربية</button>
+        </nav>
+    </header>
+    <main>
+        <section class="chat-intro">
+            <p class="eyebrow">Community space</p>
+            <h1>Chat with the community</h1>
+            <p>Join public conversations, message friends privately, or start a group around a shared interest.</p>
+            <p class="demo-notice"><strong>Local demo:</strong> chats and friends are saved only in this browser. They are not shared with other people or devices.</p>
+        </section>
+        <p id="chat-status" class="chat-status" role="status" aria-live="polite"></p>
+        <section class="chat-layout" aria-label="Community chat">
+            <aside class="chat-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-heading"><h2>Public rooms</h2></div>
+                    <div id="public-rooms" class="room-list"></div>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-heading"><h2>Private chats</h2><button id="new-private-chat" class="text-button" type="button">＋ New</button></div>
+                    <div id="private-rooms" class="room-list"></div>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-heading"><h2>Your groups</h2><button id="new-group" class="text-button" type="button">＋ Create</button></div>
+                    <div id="group-rooms" class="room-list"></div>
+                </div>
+                <section id="friends-panel" class="friends-panel">
+                    <div class="sidebar-heading"><h2>Friends</h2></div>
+                    <form id="add-friend-form" class="compact-form">
+                        <label for="friend-select">Add a member</label>
+                        <select id="friend-select" required><option value="">Choose a member</option></select>
+                        <button class="small-button" type="submit">Add friend</button>
+                    </form>
+                    <ul id="friend-list" class="friend-list"></ul>
+                </section>
+            </aside>
+            <section class="conversation" aria-label="Selected conversation">
+                <header class="conversation-header">
+                    <div>
+                        <p id="room-type" class="room-type"></p>
+                        <h2 id="room-title">Choose a room</h2>
+                        <p id="room-description" class="room-description"></p>
+                    </div>
+                    <button id="edit-group" class="small-button" type="button" hidden>Edit group</button>
+                </header>
+                <div id="member-summary" class="member-summary" hidden></div>
+                <ol id="message-list" class="message-list" aria-live="polite"></ol>
+                <p id="empty-messages" class="empty-messages">Select a room to see its messages.</p>
+                <form id="message-form" class="message-form" hidden>
+                    <label class="anonymous-option"><input id="anonymous-mode" type="checkbox"> Send anonymously</label>
+                    <div class="message-compose">
+                        <label class="visually-hidden" for="message-input">Write a message</label>
+                        <input id="message-input" name="message" maxlength="500" placeholder="Write a message…" required autocomplete="off">
+                        <button class="send-button" type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+        <dialog id="group-dialog" class="chat-dialog">
+            <form id="group-form" method="dialog">
+                <div class="dialog-heading"><h2 id="group-dialog-title">Create a group</h2><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button></div>
+                <label>Group name<input id="group-name" name="name" maxlength="50" required></label>
+                <label>About this group<textarea id="group-description-input" name="description" maxlength="180" rows="3"></textarea></label>
+                <label>Members<select id="group-members" name="members" multiple size="5"></select></label>
+                <p class="form-help">Group conversations are private to the members you select.</p>
+                <div class="dialog-actions"><button class="small-button" type="button" data-close-dialog>Cancel</button><button class="send-button" type="submit">Create group</button></div>
+            </form>
+        </dialog>
+    </main>
+    <footer class="site-footer"><p>© <span id="year"></span> <span data-i18n="brand">My Palestine</span></p></footer>
+</body>
+</html>

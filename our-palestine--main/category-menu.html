@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="auth.js"></script>
+    <title data-i18n="categoryMenu.travel.pageTitle">Travel Guide | My Palestine</title>
+    <link rel="stylesheet" href="category-menu.css">
+    <script src="category-menu.js" defer></script>
+</head>
+<body class="page-category-menu">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+            <a class="brand" href="my-palistain.html" aria-label="My Palestine home" data-i18n-aria-label="brand.home">
+                <svg class="palestine-flag" viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                <span data-i18n="brand">My Palestine</span>
+            </a>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <ul id="menu" class="menu">
+                <li><a class="nav-link" href="my-palistain.html"><span data-i18n="nav.home">Home</span></a></li>
+                <li><a class="nav-link" href="map.html"><span data-i18n="nav.map">Map</span></a></li>
+                <li><a class="nav-link" href="market.html"><span data-i18n="nav.market">Market</span></a></li>
+                <li><a class="nav-link" href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">العربية</button>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section alt category-menu-panel">
+            <p id="category-menu-eyebrow" class="eyebrow" data-i18n="categoryMenu.eyebrow">Explore</p>
+            <h1 id="category-menu-title" data-i18n="categoryMenu.travel.title">Travel Guide</h1>
+            <p id="category-menu-description" class="category-menu-description" data-i18n="categoryMenu.travel.description"></p>
+            <div id="category-menu-options" class="category-menu-grid"></div>
+            <a class="category-menu-back" href="services.html" data-i18n="categoryMenu.back">Back to Services</a>
+        </section>
+    </main>
+    <footer class="site-footer"><p>© <span id="year"></span> <span data-i18n="brand">My Palestine</span></p></footer>
+</body>
+</html>

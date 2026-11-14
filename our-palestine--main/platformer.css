@@ -1,0 +1,137 @@
+@import url("./my-palistain.css");
+
+.platformer-panel {
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+    padding: clamp(1.3rem, 4vw, 2.7rem);
+}
+
+.platformer-panel > .eyebrow {
+    margin: 0 0 0.65rem;
+    color: var(--green-dark);
+    font-weight: 750;
+}
+
+.platformer-instructions {
+    margin: 0;
+    color: var(--muted);
+}
+
+.platformer-hud {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.25rem 0 0.75rem;
+    font-weight: 700;
+}
+
+.platformer-hud p {
+    margin: 0;
+}
+
+#game-status {
+    color: var(--green-dark);
+    text-align: end;
+}
+
+.game-canvas-wrap {
+    overflow: hidden;
+    border: 1px solid rgba(29, 48, 41, 0.12);
+    border-radius: 18px;
+    background: #c8eced;
+    box-shadow: var(--shadow);
+}
+
+#platformer-canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    touch-action: none;
+}
+
+#platformer-canvas:focus-visible,
+.touch-controls button:focus-visible,
+.platformer-actions .button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.touch-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.touch-controls button {
+    width: 58px;
+    height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--green-dark);
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.35rem;
+    font-weight: 800;
+    touch-action: none;
+}
+
+.touch-controls button:active {
+    background: rgba(23, 118, 75, 0.12);
+}
+
+.platformer-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.platformer-actions .button {
+    padding: 0.75rem 1.1rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--green);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 750;
+}
+
+.platformer-actions .button:hover {
+    background: var(--green-dark);
+}
+
+.platformer-actions .back-link {
+    margin: 0;
+    color: var(--green-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.platformer-actions .back-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+    .platformer-hud {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    #game-status {
+        text-align: start;
+    }
+}
+
+@media (max-width: 420px) {
+    .platformer-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+}

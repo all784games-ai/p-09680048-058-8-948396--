@@ -1,0 +1,37 @@
+@import url("./my-palistain.css");
+
+.page-services .card {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page-services .service-card {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-services .service-card:hover,
+.page-services .service-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(23, 118, 75, 0.35);
+    box-shadow: 0 14px 28px rgba(37, 52, 43, 0.12);
+}
+
+.page-services .service-card-cta {
+    margin-top: 0.8rem;
+    color: var(--green-dark);
+    font-weight: 750;
+}
+
+.page-services .service-game-card {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-services .game-card-cta {
+    margin-top: 0.8rem;
+    color: var(--green-dark);
+    font-weight: 750;
+}

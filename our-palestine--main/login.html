@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173d32">
+    <title>Welcome | Our Palestine</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="auth.js"></script>
+    <script src="login.js" defer></script>
+</head>
+<body class="login-page">
+    <main class="login-layout">
+        <section class="login-card" aria-labelledby="welcome-title">
+            <a class="login-brand" href="my-palistain.html" aria-label="Our Palestine">
+                <svg class="login-flag" viewBox="0 0 30 20" aria-hidden="true">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                Our Palestine
+            </a>
+            <p class="login-eyebrow">A community by Palestinians, for Palestinians</p>
+            <h1 id="welcome-title">Welcome</h1>
+            <p class="login-description">Sign in or create an account to explore the website.</p>
+
+            <div class="auth-tabs" role="group" aria-label="Choose an account action">
+                <button id="sign-in-tab" class="auth-tab is-active" type="button" aria-pressed="true">Sign in</button>
+                <button id="create-account-tab" class="auth-tab" type="button" aria-pressed="false">Create account</button>
+                <button id="admin-tab" class="auth-tab" type="button" aria-pressed="false">Admin</button>
+            </div>
+
+            <form id="account-form" novalidate>
+                <label id="name-field" class="form-field" hidden>
+                    <span>Your name</span>
+                    <input id="name" name="name" type="text" autocomplete="name" maxlength="80" disabled>
+                </label>
+                <label class="form-field">
+                    <span id="email-label">Email address</span>
+                    <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                </label>
+                <label class="form-field">
+                    <span>Password</span>
+                    <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" required>
+                </label>
+                <label id="confirm-field" class="form-field" hidden>
+                    <span>Confirm password</span>
+                    <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" minlength="8" disabled>
+                </label>
+                <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+                <button id="submit-account" class="primary-button" type="submit">Sign in</button>
+            </form>
+
+            <div class="guest-divider"><span>or</span></div>
+            <button id="guest-button" class="guest-button" type="button">Continue as guest</button>
+            <p class="local-notice">Demo access only: accounts are saved in this browser and are not protected by a server.</p>
+        </section>
+    </main>
+</body>
+</html>

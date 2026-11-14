@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="auth.js"></script>
+    <title data-i18n="page.title">My Palestine</title>
+    <link rel="stylesheet" href="my-palistain.css">
+    <script src="my-palistain.js" defer></script>
+    <script src="feedback.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+            <a class="brand" href="my-palistain.html" aria-label="My Palestine home" data-i18n-aria-label="brand.home">
+                <svg class="palestine-flag" viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                <span data-i18n="brand">My Palestine</span>
+            </a>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="menu" class="menu">
+                <li>
+                    <a class="nav-link active" href="my-palistain.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path>
+                        </svg>
+                        <span data-i18n="nav.home">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="map.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="2.5"></circle>
+                        </svg>
+                        <span data-i18n="nav.map">Map</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="market.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 8h16l-1 13H5L4 8Z"></path>
+                            <path d="M9 9V6a3 3 0 0 1 6 0v3"></path>
+                        </svg>
+                        <span data-i18n="nav.market">Market</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="services.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                            <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                        </svg>
+                        <span data-i18n="nav.services">Services</span>
+                    </a>
+                </li>
+            </ul>
+            <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">العربية</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow" data-i18n="hero.eyebrow">Hi everyone!</p>
+                <h1 data-i18n="hero.title">A website by Palestinians, for Palestinians.</h1>
+                <p data-i18n="hero.text">
+                    This is a beta version. Please help us improve it.
+                </p>
+                <a class="button" href="#about-section" data-i18n="hero.button">Learn more</a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="hero-art-ring"></div>
+                <div class="hero-flag">
+                    <svg viewBox="0 0 300 200" focusable="false">
+                        <rect width="300" height="200" fill="#fff"></rect>
+                        <rect width="300" height="66.7" fill="#111"></rect>
+                        <rect y="133.3" width="300" height="66.7" fill="#078a4b"></rect>
+                        <path d="M0 0 L120 100 L0 200 Z" fill="#e4312b"></path>
+                    </svg>
+                </div>
+                <span class="hero-art-caption" data-i18n="hero.artCaption">Palestine</span>
+            </div>
+        </section>
+        <section class="version-card" aria-label="Website version and updates">
+            <div class="version-card-copy">
+                <span class="version-icon" aria-hidden="true">↗</span>
+                <div>
+                    <p class="version-label">Website updates</p>
+                    <p id="current-version" class="version-summary">Version 0.3.0 · Login, admin tools, and community updates</p>
+                </div>
+            </div>
+            <button id="open-updates" class="updates-icon-button" type="button" aria-label="Open version history" aria-haspopup="dialog" aria-controls="updates-dialog">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg>
+            </button>
+        </section>
+        <section id="about-section" class="content-section page-intro home-about-section">
+            <p class="eyebrow" data-i18n="about.eyebrow">Our story</p>
+            <h2 data-i18n="about.title">About</h2>
+            <p data-i18n="about.text">This page is made by Palestinians, for Palestinians, to help build a better future for our country.</p>
+        </section>
+        <section id="contact-section" class="content-section feedback-section">
+            <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+            <h2 data-i18n="contact.title">Contact</h2>
+            <p class="contact-email"><span data-i18n="contact.label">Email</span>: <a href="mailto:hello@example.com">hello@example.com</a></p>
+            <h3>Feedback and suggestions</h3>
+            <p>Send feedback or suggest a text change, news story, or game. Suggestions are reviewed before appearing publicly.</p>
+            <form id="feedback-form" class="feedback-form">
+                <label>Your name<input name="name" maxlength="80" autocomplete="name" required></label>
+                <label>Email (optional)<input name="email" type="email" maxlength="254" autocomplete="email"></label>
+                <label>What is this about?
+                    <select name="type" id="feedback-type">
+                        <option value="feedback">Feedback</option>
+                        <option value="edit">Suggest a text change</option>
+                        <option value="news">Suggest news</option>
+                        <option value="game">Suggest a game</option>
+                    </select>
+                </label>
+                <label id="suggested-page-field" hidden>Page text to update
+                    <select name="key">
+                        <option value="hero.title">Home headline</option>
+                        <option value="hero.text">Home introduction</option>
+                        <option value="about.title">About heading</option>
+                        <option value="about.text">About text</option>
+                        <option value="services.title">Services heading</option>
+                        <option value="contact.title">Contact heading</option>
+                    </select>
+                </label>
+                <label>Title<input name="title" maxlength="100" required></label>
+                <label>Your message<textarea name="text" maxlength="600" rows="4" required></textarea></label>
+                <p id="feedback-message" class="feedback-message" role="status" aria-live="polite"></p>
+                <button class="button" type="submit">Send for review</button>
+            </form>
+        </section>
+        <dialog id="updates-dialog" class="updates-dialog" aria-labelledby="updates-title">
+            <div class="updates-dialog-header">
+                <div>
+                    <p class="eyebrow">Release notes</p>
+                    <h2 id="updates-title">What’s new</h2>
+                </div>
+                <button id="close-updates" class="updates-close" type="button" aria-label="Close updates">×</button>
+            </div>
+            <div id="updates-list" class="updates-list"></div>
+        </dialog>
+        <section class="content-section community-news-section" hidden>
+            <p class="eyebrow">Community updates</p>
+            <h2>Latest news</h2>
+            <div id="community-news" class="card-grid"></div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> <span data-i18n="brand">My Palestine</span></p>
+    </footer>
+    <script src="updates.js" defer></script>
+</body>
+</html>

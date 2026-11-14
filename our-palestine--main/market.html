@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="auth.js"></script>
+    <title data-i18n="page.market.title">Market | My Palestine</title>
+    <link rel="stylesheet" href="market.css">
+    <script src="market.js" defer></script>
+</head>
+<body class="page-market">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+            <a class="brand" href="my-palistain.html" aria-label="My Palestine home" data-i18n-aria-label="brand.home">
+                <svg class="palestine-flag" viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                <span data-i18n="brand">My Palestine</span>
+            </a>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <ul id="menu" class="menu">
+                <li><a class="nav-link" href="my-palistain.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg><span data-i18n="nav.home">Home</span></a></li>
+                <li><a class="nav-link" href="map.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span data-i18n="nav.map">Map</span></a></li>
+                <li><a class="nav-link active" href="market.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1 13H5L4 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></svg><span data-i18n="nav.market">Market</span></a></li>
+                <li><a class="nav-link" href="services.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span data-i18n="nav.services">Services</span></a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">العربية</button>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section alt">
+            <p class="eyebrow" data-i18n="market.eyebrow">Community marketplace</p>
+            <h1 data-i18n="market.title">Buy &amp; Sell</h1>
+            <p class="market-intro" data-market-i18n="intro">Browse community listings or post something you would like to sell.</p>
+            <div class="market-tabs" role="tablist" aria-label="Market sections" data-market-i18n-aria-label="sections">
+                <button id="buy-tab" class="market-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="buy-panel" data-market-i18n="buy">Buy</button>
+                <button id="sell-tab" class="market-tab" type="button" role="tab" aria-selected="false" aria-controls="sell-panel" data-market-i18n="sell">Sell</button>
+            </div>
+            <section id="buy-panel" class="market-panel" role="tabpanel" aria-labelledby="buy-tab">
+                <div class="market-toolbar">
+                    <label class="market-search"><span data-market-i18n="searchProducts">Search products</span>
+                        <input id="market-search" type="search" placeholder="Search by name or description" data-market-i18n-placeholder="searchPlaceholder">
+                    </label>
+                    <label><span data-market-i18n="productType">Product type</span>
+                        <select id="category-filter">
+                            <option value="all" data-market-i18n="allProducts">All products</option>
+                            <option value="Food & produce" data-market-i18n="food">Food &amp; produce</option>
+                            <option value="Arts & crafts" data-market-i18n="crafts">Arts &amp; crafts</option>
+                            <option value="Clothing" data-market-i18n="clothing">Clothing</option>
+                            <option value="Home & living" data-market-i18n="homeLiving">Home &amp; living</option>
+                            <option value="Books & learning" data-market-i18n="books">Books &amp; learning</option>
+                            <option value="Services" data-market-i18n="services">Services</option>
+                            <option value="Other" data-market-i18n="other">Other</option>
+                        </select>
+                    </label>
+                    <label><span data-market-i18n="currency">Currency</span>
+                        <select id="currency-filter">
+                            <option value="all" data-market-i18n="allCurrencies">All currencies</option>
+                            <option value="ILS">ILS</option>
+                            <option value="USD">USD</option>
+                            <option value="JOD">JOD</option>
+                        </select>
+                    </label>
+                    <label><span data-market-i18n="sortBy">Sort by</span>
+                        <select id="sort-filter">
+                            <option value="newest" data-market-i18n="newest">Newest first</option>
+                            <option value="price-low" data-market-i18n="priceLow">Price: low to high</option>
+                            <option value="price-high" data-market-i18n="priceHigh">Price: high to low</option>
+                            <option value="name" data-market-i18n="nameSort">Name: A to Z</option>
+                        </select>
+                    </label>
+                </div>
+                <p id="market-result-count" class="market-result-count" aria-live="polite"></p>
+                <p class="market-sort-note" data-market-i18n="sortNote">When viewing all currencies, price sorting groups products by currency; filter to one currency for a direct price comparison.</p>
+                <div id="product-list" class="product-grid"></div>
+            </section>
+            <section id="sell-panel" class="market-panel" role="tabpanel" aria-labelledby="sell-tab" hidden>
+                <div class="sell-intro">
+                    <h2 data-market-i18n="postProduct">Post a product for sale</h2>
+                    <p data-market-i18n="postDescription">Add a clear description and price so buyers know what you are offering.</p>
+                </div>
+                <form id="listing-form" class="listing-form">
+                    <label><span data-market-i18n="productName">Product name</span>
+                        <input name="name" type="text" maxlength="80" autocomplete="off" required>
+                    </label>
+                    <label><span data-market-i18n="productType">Product type</span>
+                        <select name="category" required>
+                            <option value="Food & produce" data-market-i18n="food">Food &amp; produce</option>
+                            <option value="Arts & crafts" data-market-i18n="crafts">Arts &amp; crafts</option>
+                            <option value="Clothing" data-market-i18n="clothing">Clothing</option>
+                            <option value="Home & living" data-market-i18n="homeLiving">Home &amp; living</option>
+                            <option value="Books & learning" data-market-i18n="books">Books &amp; learning</option>
+                            <option value="Services" data-market-i18n="services">Services</option>
+                            <option value="Other" data-market-i18n="other">Other</option>
+                        </select>
+                    </label>
+                    <label><span data-market-i18n="price">Price</span>
+                        <div class="price-input">
+                            <input name="price" type="number" min="0.01" max="10000000" step="0.01" placeholder="0.00" data-market-i18n-placeholder="pricePlaceholder" required>
+                            <select name="currency" aria-label="Price currency" data-market-i18n-aria-label="priceCurrency">
+                                <option value="ILS">ILS</option>
+                                <option value="USD">USD</option>
+                                <option value="JOD">JOD</option>
+                            </select>
+                        </div>
+                    </label>
+                    <label><span data-market-i18n="condition">Condition</span>
+                        <select name="condition">
+                            <option value="New" data-market-i18n="newCondition">New</option>
+                            <option value="Like new" data-market-i18n="likeNew">Like new</option>
+                            <option value="Good" data-market-i18n="goodCondition">Good</option>
+                            <option value="Pre-owned" data-market-i18n="preowned">Pre-owned</option>
+                            <option value="Not applicable" data-market-i18n="notApplicable">Not applicable</option>
+                        </select>
+                    </label>
+                    <label class="form-wide"><span data-market-i18n="description">Description</span>
+                        <textarea name="description" rows="4" maxlength="700" placeholder="Describe the product, size, pickup details, or service." data-market-i18n-placeholder="descriptionPlaceholder" required></textarea>
+                    </label>
+                    <label><span data-market-i18n="sellerName">Seller name</span>
+                        <input name="seller" type="text" maxlength="80" required>
+                    </label>
+                    <label><span data-market-i18n="contactEmail">Contact email (optional)</span>
+                        <input name="contact" type="email" maxlength="254" autocomplete="email">
+                    </label>
+                    <p class="market-storage-note form-wide" data-market-i18n="storageNote">Demo marketplace: listings are saved in this browser only and are not shared online.</p>
+                    <p id="listing-message" class="listing-message form-wide" role="status" aria-live="polite"></p>
+                    <button class="button form-wide" type="submit" data-market-i18n="postListing">Post listing</button>
+                </form>
+                <section class="my-listings-section" aria-labelledby="my-listings-title">
+                    <h2 id="my-listings-title" data-market-i18n="yourListings">Your listings</h2>
+                    <div id="my-listings" class="record-list"></div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer class="site-footer"><p>© <span id="year"></span> <span data-i18n="brand">My Palestine</span></p></footer>
+</body>
+</html>

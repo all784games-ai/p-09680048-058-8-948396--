@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="auth.js"></script>
+    <title data-i18n="quiz.page.title">Palestine Quiz | My Palestine</title>
+    <link rel="stylesheet" href="quiz.css">
+    <script src="quiz.js" defer></script>
+</head>
+<body class="page-quiz">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+            <a class="brand" href="my-palistain.html" aria-label="My Palestine home" data-i18n-aria-label="brand.home">
+                <svg class="palestine-flag" viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                <span data-i18n="brand">My Palestine</span>
+            </a>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <ul id="menu" class="menu">
+                <li><a class="nav-link" href="my-palistain.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg><span data-i18n="nav.home">Home</span></a></li>
+                <li><a class="nav-link" href="map.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span data-i18n="nav.map">Map</span></a></li>
+                <li><a class="nav-link" href="market.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1 13H5L4 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></svg><span data-i18n="nav.market">Market</span></a></li>
+                <li><a class="nav-link" href="services.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span data-i18n="nav.services">Services</span></a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">العربية</button>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section game-panel">
+            <p class="eyebrow" data-i18n="games.eyebrow">A little culture challenge</p>
+            <h1 data-i18n="games.quiz.title">Palestinian Culture Quiz</h1>
+            <p class="game-instructions" data-i18n="games.instructions">Choose the right answer for each question. How many can you get?</p>
+            <div class="quiz" aria-live="polite">
+                <div class="quiz-status">
+                    <p id="question-count" class="question-count"></p>
+                    <div id="progress" class="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+                        <span id="progress-fill"></span>
+                    </div>
+                </div>
+                <h2 id="question"></h2>
+                <div id="answer-list" class="answer-list"></div>
+                <p id="feedback" class="feedback" role="status"></p>
+                <button id="next-button" class="button quiz-button" type="button" hidden></button>
+                <div id="result" class="quiz-result" hidden>
+                    <h2 id="result-title"></h2>
+                    <p id="result-score"></p>
+                    <button id="restart-button" class="button quiz-button" type="button" data-i18n="games.restart">Play again</button>
+                </div>
+            </div>
+            <a class="back-link" href="game.html" data-i18n="games.back">Back to Games</a>
+        </section>
+    </main>
+    <footer class="site-footer"><p>© <span id="year"></span> <span data-i18n="brand">My Palestine</span></p></footer>
+</body>
+</html>

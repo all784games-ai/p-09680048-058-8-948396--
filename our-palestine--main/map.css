@@ -1,0 +1,5 @@
+@import url("./my-palistain.css");
+
+.page-map .map-section {
+    padding: clamp(1.25rem, 3vw, 2rem);
+}

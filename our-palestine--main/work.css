@@ -1,0 +1,239 @@
+@import url("./my-palistain.css");
+
+.page-work main {
+    width: min(1120px, calc(100% - 3rem));
+}
+
+.work-intro {
+    margin-bottom: 1.4rem;
+}
+
+.work-intro h1 {
+    margin: 0 0 0.4rem;
+    color: #18392e;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+
+.work-intro > p:not(.eyebrow) {
+    margin: 0.4rem 0;
+    color: var(--muted);
+}
+
+.work-notice {
+    max-width: 760px;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid rgba(215, 163, 72, 0.45);
+    border-radius: 12px;
+    background: rgba(215, 163, 72, 0.12);
+    font-size: 0.9rem;
+}
+
+.work-board {
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.work-toolbar {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(160px, 240px);
+    gap: 0.8rem;
+    align-items: end;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+}
+
+.work-toolbar label,
+.job-form label {
+    display: grid;
+    gap: 0.35rem;
+    color: #30483d;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.work-toolbar input,
+.work-toolbar select,
+.job-form input,
+.job-form select,
+.job-form textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.62rem 0.7rem;
+    border: 1px solid #d5d9d2;
+    border-radius: 9px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    font-weight: 400;
+}
+
+.job-form textarea {
+    resize: vertical;
+}
+
+.job-count {
+    margin: 1rem 0 0.65rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+    gap: 1rem;
+}
+
+.job-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(37, 52, 43, 0.05);
+    overflow-wrap: anywhere;
+}
+
+.job-card h2 {
+    margin: 0.65rem 0 0.15rem;
+    color: #244337;
+    font-size: 1.18rem;
+}
+
+.job-company {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.75rem 0;
+}
+
+.job-tag {
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(23, 118, 75, 0.09);
+    color: var(--green-dark);
+    font-size: 0.75rem;
+    font-weight: 750;
+}
+
+.job-description {
+    flex: 1;
+    margin: 0;
+    color: var(--muted);
+    white-space: pre-wrap;
+}
+
+.job-meta {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.job-contact {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 0.8rem;
+    color: var(--green-dark);
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.job-contact:hover {
+    text-decoration: underline;
+}
+
+.job-delete {
+    align-self: flex-start;
+    margin-top: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid rgba(189, 57, 52, 0.3);
+    border-radius: 8px;
+    background: transparent;
+    color: #a52e2b;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.job-empty {
+    grid-column: 1 / -1;
+    padding: 2rem 1rem;
+    border: 1px dashed #cbd4cc;
+    border-radius: 14px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.post-job-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.post-job-section h2 {
+    margin: 0 0 0.25rem;
+    color: #244337;
+}
+
+.post-job-section > div p,
+.work-storage-note {
+    color: var(--muted);
+}
+
+.post-job-section > div p {
+    margin: 0 0 1rem;
+}
+
+.job-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 850px;
+    padding: 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.job-wide {
+    grid-column: 1 / -1;
+}
+
+.work-storage-note,
+.job-message {
+    margin: 0;
+    font-size: 0.82rem;
+}
+
+.job-message {
+    color: var(--green-dark);
+}
+
+.job-message.is-error {
+    color: var(--red);
+}
+
+@media (max-width: 650px) {
+    .page-work main {
+        width: min(calc(100% - 1.25rem), 680px);
+    }
+
+    .work-toolbar,
+    .job-form {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="auth.js"></script>
+    <title data-i18n="page.map.title">Map | My Palestine</title>
+    <link rel="stylesheet" href="map.css">
+    <script src="map.js" defer></script>
+</head>
+<body class="page-map">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+            <a class="brand" href="my-palistain.html" aria-label="My Palestine home" data-i18n-aria-label="brand.home">
+                <svg class="palestine-flag" viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                <span data-i18n="brand">My Palestine</span>
+            </a>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <ul id="menu" class="menu">
+                <li><a class="nav-link" href="my-palistain.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg><span data-i18n="nav.home">Home</span></a></li>
+                <li><a class="nav-link active" href="map.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span data-i18n="nav.map">Map</span></a></li>
+                <li><a class="nav-link" href="market.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1 13H5L4 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></svg><span data-i18n="nav.market">Market</span></a></li>
+                <li><a class="nav-link" href="services.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span data-i18n="nav.services">Services</span></a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">العربية</button>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section map-section">
+            <p class="eyebrow" data-i18n="map.eyebrow">Explore</p>
+            <h1 data-i18n="map.title">Map</h1>
+            <div class="map-toolbar">
+                <span class="map-location">
+                    <span class="location-dot" aria-hidden="true"></span>
+                    <span data-i18n="map.location">Palestine</span>
+                </span>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Palestine" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="map.open">Open in Google Maps</span><span aria-hidden="true">↗</span>
+                </a>
+            </div>
+            <div class="map-box">
+                <iframe class="google-map" src="https://maps.google.com/maps?q=Palestine&amp;z=7&amp;output=embed" title="Google Maps showing Palestine" data-i18n-title="map.label" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><p>© <span id="year"></span> <span data-i18n="brand">My Palestine</span></p></footer>
+</body>
+</html>

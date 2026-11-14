@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="auth.js"></script>
+    <title data-i18n="page.work.title">Jobs &amp; work | our Palestine</title>
+    <link rel="stylesheet" href="work.css">
+    <script src="work.js" defer></script>
+</head>
+<body class="page-work">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+            <a class="brand" href="my-palistain.html" aria-label="My Palestine home" data-i18n-aria-label="brand.home">
+                <svg class="palestine-flag" viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+                    <rect width="30" height="20" fill="#fff"></rect>
+                    <rect width="30" height="6.67" fill="#111"></rect>
+                    <rect y="13.33" width="30" height="6.67" fill="#078a4b"></rect>
+                    <path d="M0 0 L12 10 L0 20 Z" fill="#e4312b"></path>
+                </svg>
+                <span data-i18n="brand">My Palestine</span>
+            </a>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <ul id="menu" class="menu">
+                <li><a class="nav-link" href="my-palistain.html"><span data-i18n="nav.home">Home</span></a></li>
+                <li><a class="nav-link" href="map.html"><span data-i18n="nav.map">Map</span></a></li>
+                <li><a class="nav-link" href="market.html"><span data-i18n="nav.market">Market</span></a></li>
+                <li><a class="nav-link" href="services.html"><span data-i18n="nav.services">Services</span></a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">العربية</button>
+        </nav>
+    </header>
+    <main>
+        <section class="work-intro">
+            <p class="eyebrow">Community opportunities</p>
+            <h1>Jobs &amp; work</h1>
+            <p>Find work, hire locally, or share an opportunity with the community.</p>
+            <p class="work-notice"><strong>Local demo:</strong> job posts are saved only in this browser and are not shared online.</p>
+        </section>
+        <section class="work-board" aria-label="Jobs and work listings">
+            <div class="work-toolbar">
+                <label>Search jobs
+                    <input id="job-search" type="search" placeholder="Search role, company, or skills">
+                </label>
+                <label>Job type
+                    <select id="type-filter">
+                        <option value="all">All types</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Temporary">Temporary</option>
+                        <option value="Volunteer">Volunteer</option>
+                    </select>
+                </label>
+            </div>
+            <p id="job-count" class="job-count" aria-live="polite"></p>
+            <div id="job-list" class="job-list"></div>
+            <section class="post-job-section" aria-labelledby="post-job-title">
+                <div>
+                    <h2 id="post-job-title">Post a job or opportunity</h2>
+                    <p>Share clear details so people can understand the role and how to apply.</p>
+                </div>
+                <form id="job-form" class="job-form">
+                    <label>Job title<input name="title" maxlength="90" required></label>
+                    <label>Organization or employer<input name="company" maxlength="90" required></label>
+                    <label>Work type
+                        <select name="type" required>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                            <option value="Contract">Contract</option>
+                            <option value="Temporary">Temporary</option>
+                            <option value="Volunteer">Volunteer</option>
+                        </select>
+                    </label>
+                    <label>Location<input name="location" maxlength="100" placeholder="City, area, or remote"></label>
+                    <label class="job-wide">Description and requirements<textarea name="description" rows="4" maxlength="1000" required></textarea></label>
+                    <label>Pay or compensation (optional)<input name="compensation" maxlength="80" placeholder="For example, negotiable"></label>
+                    <label>Contact email<input name="email" type="email" maxlength="254" autocomplete="email" required></label>
+                    <p class="work-storage-note job-wide">Only post opportunities you are authorized to share. Contact details are visible to anyone using this browser.</p>
+                    <p id="job-message" class="job-message job-wide" role="status" aria-live="polite"></p>
+                    <button class="button job-wide" type="submit">Post opportunity</button>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer class="site-footer"><p>© <span id="year"></span> <span data-i18n="brand">My Palestine</span></p></footer>
+</body>
+</html>
